@@ -10,8 +10,6 @@ make
 make install
 ```
 
-The package is also available for Arch Linux users via the [AUR](https://aur.archlinux.org/packages/simple-shutdown-dialog-git/) [`simple-shutdown-dialog-git`].
-
 ## Screenshots
 
 ![Dialog Picture 1][dialog1]
