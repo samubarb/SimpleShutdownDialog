@@ -15,7 +15,7 @@ The package is also available for Arch Linux users via the [AUR](https://aur.arc
 ## Screenshots
 
 ![Dialog Picture 1][dialog1]
-![Dialog Picture 2][dialog1]
+![Dialog Picture 2][dialog2]
 
 ## Personal fork changes
 
