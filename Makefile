@@ -17,6 +17,9 @@ $(BIN): $(OBJ)
 
 all: $(BIN)
 
+install:
+	sudo cp -f shutdown-dialog /usr/bin/shutdown-dialog
+
 clean:
 	rm -f resources.c *.o $(BIN)
 

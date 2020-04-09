@@ -5,6 +5,6 @@
         <file>shutdown.png</file>
         <file>reboot.png</file>
         <file>suspend.png</file>
-        <file>logout.png</file>
+        <!-- <file>logout.png</file> -->
     </gresource>
 </gresources>

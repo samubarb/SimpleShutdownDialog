@@ -11,7 +11,7 @@ void on_click(GtkWidget *widget, gpointer data);
 
 int main(int argc, char *argv[]) {
     GtkBuilder *builder;
-    GtkWidget *window, *btn_shutdown, *btn_reboot, *btn_suspend, *btn_logout;
+    GtkWidget *window, *btn_shutdown, *btn_reboot, *btn_suspend;
 
     gtk_init(&argc, &argv);
 
@@ -20,7 +20,7 @@ int main(int argc, char *argv[]) {
     btn_shutdown = GTK_WIDGET(gtk_builder_get_object(builder, "shutdown-button"));
     btn_reboot = GTK_WIDGET(gtk_builder_get_object(builder, "reboot-button"));
     btn_suspend = GTK_WIDGET(gtk_builder_get_object(builder, "suspend-button"));
-    btn_logout = GTK_WIDGET(gtk_builder_get_object(builder, "logout-button"));
+    // btn_logout = GTK_WIDGET(gtk_builder_get_object(builder, "logout-button"));
 
     g_signal_connect(window, "show", G_CALLBACK(on_window_show), NULL);
     g_signal_connect(window, "key-press-event", G_CALLBACK(on_key), NULL);
@@ -29,7 +29,7 @@ int main(int argc, char *argv[]) {
     g_signal_connect(btn_shutdown, "clicked", G_CALLBACK(on_click), NULL);
     g_signal_connect(btn_reboot, "clicked", G_CALLBACK(on_click), NULL);
     g_signal_connect(btn_suspend, "clicked", G_CALLBACK(on_click), NULL);
-    g_signal_connect(btn_logout, "clicked", G_CALLBACK(on_click), NULL);
+    // g_signal_connect(btn_logout, "clicked", G_CALLBACK(on_click), NULL);
 
     gtk_widget_show_all(window);
 
@@ -69,8 +69,8 @@ void on_click(GtkWidget *widget, gpointer data) {
         system("reboot");
     } else if (!strcmp(name, "suspend")) {
         system("systemctl suspend");
-    } else if (!strcmp(name, "logout")) {
-        system(get_logout_command());
+    // } else if (!strcmp(name, "logout")) {
+    //     system(get_logout_command());
     }
 
     gtk_main_quit();
