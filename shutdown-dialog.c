@@ -68,7 +68,8 @@ void on_click(GtkWidget *widget, gpointer data) {
     } else if (!strcmp(name, "reboot")) {
         system("reboot");
     } else if (!strcmp(name, "suspend")) {
-        system("systemctl suspend");
+        /* `sleep` to wait for GUI to disappear. */
+        system("(sleep 0.1s && systemctl suspend) &");
     // } else if (!strcmp(name, "logout")) {
     //     system(get_logout_command());
     }
